@@ -143,6 +143,8 @@ namespace CedenoB_ZombieGame
             combatView.RowDefinitions.Add(new RowDefinition());
             combatView.RowDefinitions.Add(new RowDefinition());
             combatView.RowDefinitions.Add(new RowDefinition());
+            combatView.RowDefinitions.Add(new RowDefinition());
+            combatView.RowDefinitions.Add(new RowDefinition());
             combatView.ColumnDefinitions.Add(new ColumnDefinition());
             combatView.ColumnDefinitions.Add(new ColumnDefinition());
             combatView.ColumnDefinitions.Add(new ColumnDefinition());
@@ -222,9 +224,48 @@ namespace CedenoB_ZombieGame
                         combatView.Children.Add(DamageDoneLabel);
                         Label DamageDone = new Label();
                         DamageDone.Content = results.Damage;
-                        Grid.SetColumn(DamageDone, 2);
+                        Grid.SetColumn(DamageDone, 1);
                         Grid.SetRow(DamageDone, 3);
                         combatView.Children.Add(DamageDone);
+                        Label AttackerHPLabel = new Label();
+                        AttackerHPLabel.Content = "Health";
+                        Grid.SetRow(AttackerHPLabel, 4);
+                        combatView.Children.Add(AttackerHPLabel);
+                        Label AttackerHP = new Label();
+                        AttackerHP.Content = attacker.HP;
+                        Grid.SetRow(AttackerHP, 4);
+                        Grid.SetColumn(AttackerHP, 1);
+                        combatView.Children.Add(AttackerHP);
+                        Label DefenderHPLabel = new Label();
+                        DefenderHPLabel.Content = "Health";
+                        Grid.SetRow(DefenderHPLabel, 4);
+                        Grid.SetColumn(DefenderHPLabel, 2);
+                        combatView.Children.Add(DefenderHPLabel);
+                        Label DefenderHP = new Label();
+                        DefenderHP.Content = defender.HP;
+                        Grid.SetRow(DefenderHP, 4);
+                        Grid.SetColumn(DefenderHP, 3);
+                        combatView.Children.Add(DefenderHP);
+
+                        Label AttackerSDCLabel = new Label();
+                        AttackerSDCLabel.Content = "SDC";
+                        Grid.SetRow(AttackerSDCLabel, 5);
+                        combatView.Children.Add(AttackerSDCLabel);
+                        Label AttackerSDC = new Label();
+                        AttackerSDC.Content = attacker.SCD;
+                        Grid.SetRow(AttackerSDC, 5);
+                        Grid.SetColumn(AttackerSDC, 1);
+                        combatView.Children.Add(AttackerSDC);
+                        Label DefenderSDCLabel = new Label();
+                        DefenderSDCLabel.Content = "SDC";
+                        Grid.SetRow(DefenderSDCLabel, 5);
+                        Grid.SetColumn(DefenderSDCLabel, 2);
+                        combatView.Children.Add(DefenderSDCLabel);
+                        Label DefenderSDC = new Label();
+                        DefenderSDC.Content = defender.SCD;
+                        Grid.SetRow(DefenderSDC, 5);
+                        Grid.SetColumn(DefenderSDC, 3);
+                        combatView.Children.Add(DefenderSDC);
                     }
                     else
                     {
