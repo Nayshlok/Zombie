@@ -24,6 +24,8 @@ namespace ZombieApocalypseSimulator
             SCD = DummyDice(15, min: 10);
             HP = DummyDice(20, min: 15);
             MoneyValue = DummyDice(15, min: 5);
+
+            getItem();
         }
     }
 }

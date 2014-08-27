@@ -43,6 +43,7 @@ namespace CedenoB_ZombieGame
         private Grid battleView;
         private CombatManager combatManager;
         private SaveControl saveControl = new SaveControl();
+        public UnitMovement.Movement move = new UnitMovement.Movement();
 
 		public MainWindow()
 		{
@@ -84,6 +85,8 @@ namespace CedenoB_ZombieGame
                 }
             }
             Console.WriteLine();
+
+            move.grid = GameBoard;
         }
 
         public Coordinate FindCharacter(Character character)

@@ -98,5 +98,28 @@ namespace ZombieApocalypseSimulator
 
             return bonus;
         }
+
+        private CedenoB_ZombieGame.Item _ItemAt;
+        public CedenoB_ZombieGame.Item ItemAt
+        {
+            get
+            {
+                return _ItemAt;
+            }
+            set
+            {
+                _ItemAt = value;
+            }
+        }
+
+        public void setItemAt(int i)
+        {
+            ItemAt = inventory.list.ElementAt(i);
+        }
+
+        public void killItemAt(int i)
+        {
+            inventory.list.RemoveAt(i);
+        }
     }
 }

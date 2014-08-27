@@ -157,3 +157,15 @@ C:\Users\David Borland\Documents\GitHub\ZombieApocalypse\Zombie\CedenoB_ZombieGa
 C:\Users\David Borland\Documents\GitHub\ZombieApocalypse\Zombie\CedenoB_ZombieGame\CedenoB_ZombieGame\obj\Debug\CedenoB_ZombieGame.g.resources
 C:\Users\David Borland\Documents\GitHub\ZombieApocalypse\Zombie\CedenoB_ZombieGame\CedenoB_ZombieGame\obj\Debug\CedenoB_ZombieGame.Properties.Resources.resources
 C:\Users\David Borland\Documents\GitHub\ZombieApocalypse\Zombie\CedenoB_ZombieGame\CedenoB_ZombieGame\obj\Debug\CedenoB_ZombieGame.csproj.GenerateResource.Cache
+C:\Users\Other\Documents\GitHub\Zombie\CedenoB_ZombieGame\CedenoB_ZombieGame\bin\Debug\CedenoB_ZombieGame.exe.config
+C:\Users\Other\Documents\GitHub\Zombie\CedenoB_ZombieGame\CedenoB_ZombieGame\obj\Debug\CedenoB_ZombieGame.exe
+C:\Users\Other\Documents\GitHub\Zombie\CedenoB_ZombieGame\CedenoB_ZombieGame\obj\Debug\CedenoB_ZombieGame.pdb
+C:\Users\Other\Documents\GitHub\Zombie\CedenoB_ZombieGame\CedenoB_ZombieGame\obj\Debug\CedenoB_ZombieGame.csprojResolveAssemblyReference.cache
+C:\Users\Other\Documents\GitHub\Zombie\CedenoB_ZombieGame\CedenoB_ZombieGame\obj\Debug\MainWindow.baml
+C:\Users\Other\Documents\GitHub\Zombie\CedenoB_ZombieGame\CedenoB_ZombieGame\obj\Debug\MainWindow.g.cs
+C:\Users\Other\Documents\GitHub\Zombie\CedenoB_ZombieGame\CedenoB_ZombieGame\obj\Debug\App.g.cs
+C:\Users\Other\Documents\GitHub\Zombie\CedenoB_ZombieGame\CedenoB_ZombieGame\obj\Debug\CedenoB_ZombieGame_Content.g.cs
+C:\Users\Other\Documents\GitHub\Zombie\CedenoB_ZombieGame\CedenoB_ZombieGame\obj\Debug\CedenoB_ZombieGame_MarkupCompile.cache
+C:\Users\Other\Documents\GitHub\Zombie\CedenoB_ZombieGame\CedenoB_ZombieGame\obj\Debug\CedenoB_ZombieGame.g.resources
+C:\Users\Other\Documents\GitHub\Zombie\CedenoB_ZombieGame\CedenoB_ZombieGame\obj\Debug\CedenoB_ZombieGame.Properties.Resources.resources
+C:\Users\Other\Documents\GitHub\Zombie\CedenoB_ZombieGame\CedenoB_ZombieGame\obj\Debug\CedenoB_ZombieGame.csproj.GenerateResource.Cache
