@@ -108,6 +108,13 @@ namespace ZombieApocalypseSimulator
             set { _SquaresToMove = value; }
         }
 
+        private int _SquaresLeft;
+        public int SquaresLeft
+        {
+            get { return _SquaresLeft; }
+            set { _SquaresLeft = value; }
+        }
+
         private string _Name;
         public string Name
         {
