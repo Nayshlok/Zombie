@@ -55,14 +55,14 @@ namespace zombieApocalypse.Combat
                     }
                     int damage = damageDone();
                     results.Damage = damage;
-                    if (defender.SCD >= damage && !damageHP)
+                    if (defender.SDC >= damage && !damageHP)
                     {
-                        defender.SCD -= damage;
+                        defender.SDC -= damage;
                     }
-                    else if (defender.SCD < damage && defender.SCD > 0 && !damageHP)
+                    else if (defender.SDC < damage && defender.SDC > 0 && !damageHP)
                     {
-                        damage -= defender.SCD;
-                        defender.SCD = 0;
+                        damage -= defender.SDC;
+                        defender.SDC = 0;
                         defender.HP -= damage;
                     }
                     else

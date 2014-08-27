@@ -148,7 +148,6 @@ C:\Users\David Borland\Documents\GitHub\ZombieApocalypse\Zombie\CedenoB_ZombieGa
 C:\Users\David Borland\Documents\GitHub\ZombieApocalypse\Zombie\CedenoB_ZombieGame\CedenoB_ZombieGame\bin\Debug\Images\Warrior.png
 C:\Users\David Borland\Documents\GitHub\ZombieApocalypse\Zombie\CedenoB_ZombieGame\CedenoB_ZombieGame\bin\Debug\CedenoB_ZombieGame.exe
 C:\Users\David Borland\Documents\GitHub\ZombieApocalypse\Zombie\CedenoB_ZombieGame\CedenoB_ZombieGame\bin\Debug\CedenoB_ZombieGame.pdb
-C:\Users\David Borland\Documents\GitHub\ZombieApocalypse\Zombie\CedenoB_ZombieGame\CedenoB_ZombieGame\obj\Debug\CedenoB_ZombieGame.csprojResolveAssemblyReference.cache
 C:\Users\David Borland\Documents\GitHub\ZombieApocalypse\Zombie\CedenoB_ZombieGame\CedenoB_ZombieGame\obj\Debug\MainWindow.baml
 C:\Users\David Borland\Documents\GitHub\ZombieApocalypse\Zombie\CedenoB_ZombieGame\CedenoB_ZombieGame\obj\Debug\MainWindow.g.cs
 C:\Users\David Borland\Documents\GitHub\ZombieApocalypse\Zombie\CedenoB_ZombieGame\CedenoB_ZombieGame\obj\Debug\App.g.cs
@@ -157,3 +156,5 @@ C:\Users\David Borland\Documents\GitHub\ZombieApocalypse\Zombie\CedenoB_ZombieGa
 C:\Users\David Borland\Documents\GitHub\ZombieApocalypse\Zombie\CedenoB_ZombieGame\CedenoB_ZombieGame\obj\Debug\CedenoB_ZombieGame.g.resources
 C:\Users\David Borland\Documents\GitHub\ZombieApocalypse\Zombie\CedenoB_ZombieGame\CedenoB_ZombieGame\obj\Debug\CedenoB_ZombieGame.Properties.Resources.resources
 C:\Users\David Borland\Documents\GitHub\ZombieApocalypse\Zombie\CedenoB_ZombieGame\CedenoB_ZombieGame\obj\Debug\CedenoB_ZombieGame.csproj.GenerateResource.Cache
+C:\Users\David Borland\Documents\GitHub\ZombieApocalypse\Zombie\CedenoB_ZombieGame\CedenoB_ZombieGame\bin\Debug\Images\Fire.png
+C:\Users\David Borland\Documents\GitHub\ZombieApocalypse\Zombie\CedenoB_ZombieGame\CedenoB_ZombieGame\obj\Debug\CedenoB_ZombieGame.csprojResolveAssemblyReference.cache

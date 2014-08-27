@@ -14,6 +14,7 @@
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/desert.png")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/farmer.png")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/fastattack.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/fire.png")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/gangsta.jpg")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/handgunammo.png")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/handgun.jpg")]

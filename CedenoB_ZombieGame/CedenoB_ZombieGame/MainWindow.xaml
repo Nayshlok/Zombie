@@ -20,9 +20,10 @@
         <Border Height="55" Background="SkyBlue" BorderBrush="Black" BorderThickness="1" DockPanel.Dock="Top">
             <TextBlock Foreground="Black">Dock = "Top"</TextBlock>
         </Border>
-        <Grid DockPanel.Dock="Left" Width="250">
+        <StackPanel DockPanel.Dock="Left" Width="250">
             <Button x:Name="testButton" VerticalAlignment="Top" Click="testButton_Click_1">Show combat</Button>
-        </Grid>
+            <Button x:Name="endTurn" VerticalAlignment="Top" Click="endTurn_Click_1">End Turn</Button>
+        </StackPanel>
         <Grid DockPanel.Dock="Right" Width="250"></Grid>
         <Canvas x:Name="GameGrid" DockPanel.Dock="Bottom" Background="Brown">
             <UniformGrid x:Name="GameUniformGrid" Grid.Column="1" Height="{Binding ElementName=GameGrid, Path=ActualHeight}" 

@@ -22,7 +22,7 @@ namespace ZombieApocalypseSimulator
             PE = DummyDice(21, min: 16);
             SPD = DummyDice(10, min: 7);
             BaseDamage = new Dice(3, 6);
-            SCD = DummyDice(80, min: 60);
+            SDC = DummyDice(80, min: 60);
             HP = DummyDice(50, min: 35);
             MoneyValue = DummyDice(20, min: 10);
         }

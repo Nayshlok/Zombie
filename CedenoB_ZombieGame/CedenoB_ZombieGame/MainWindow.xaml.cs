@@ -252,7 +252,7 @@ namespace CedenoB_ZombieGame
                         Grid.SetRow(AttackerSDCLabel, 5);
                         combatView.Children.Add(AttackerSDCLabel);
                         Label AttackerSDC = new Label();
-                        AttackerSDC.Content = attacker.SCD;
+                        AttackerSDC.Content = attacker.SDC;
                         Grid.SetRow(AttackerSDC, 5);
                         Grid.SetColumn(AttackerSDC, 1);
                         combatView.Children.Add(AttackerSDC);
@@ -262,7 +262,7 @@ namespace CedenoB_ZombieGame
                         Grid.SetColumn(DefenderSDCLabel, 2);
                         combatView.Children.Add(DefenderSDCLabel);
                         Label DefenderSDC = new Label();
-                        DefenderSDC.Content = defender.SCD;
+                        DefenderSDC.Content = defender.SDC;
                         Grid.SetRow(DefenderSDC, 5);
                         Grid.SetColumn(DefenderSDC, 3);
                         combatView.Children.Add(DefenderSDC);
@@ -305,6 +305,42 @@ namespace CedenoB_ZombieGame
             battleView = combatView;
         }
         #endregion
+
+        public void endTurnCheck()
+        {
+            foreach (Square s in GameBoard)
+            {
+                if (s.onFire)
+                {
+                    fireDamage(s);
+                }
+            }
+        }
+
+        public void fireDamage(Square s)
+        {
+            if (s.Token != null)
+            {
+                s.Token.HP -= 4;
+                s.Token.SDC -= 2;
+            }
+            if (GameBoard[s.X - 1, s.Y].Token != null)
+            {
+                GameBoard[s.X - 1, s.Y].Token.HP -= 2;
+            }
+            if (GameBoard[s.X + 1, s.Y].Token != null)
+            {
+                GameBoard[s.X + 1, s.Y].Token.HP -= 2;
+            }
+            if (GameBoard[s.X,s.Y - 1].Token != null)
+            {
+                GameBoard[s.X, s.Y - 1].Token.HP -= 2;
+            }
+            if (GameBoard[s.X, s.Y + 1].Token != null)
+            {
+                GameBoard[s.X, s.Y + 1].Token.HP -= 2;
+            }
+        }
 
         private void CommandBinding_CanExecute_1(object sender, CanExecuteRoutedEventArgs e)
         {
@@ -374,6 +410,11 @@ namespace CedenoB_ZombieGame
                     System.Windows.MessageBox.Show(ex.Message);
                 }
             }
+        }
+
+        private void endTurn_Click_1(object sender, RoutedEventArgs e)
+        {
+            endTurnCheck();
         }
 
 

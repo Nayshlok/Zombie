@@ -26,6 +26,8 @@ namespace CedenoB_ZombieGame
 		bool isOpen = false;
         public Delegates.SelectCharacter PassCharacter { get; set; }
         public string imagePath { get; set; }
+        public bool onFire { get; set; }
+        public bool hasOil { get; set; }
 
         public int X { get; set; }
         public int Y { get; set; }
@@ -68,6 +70,8 @@ namespace CedenoB_ZombieGame
         private void selectCharacter(object sender, MouseButtonEventArgs e)
         {
             PassCharacter(Token, X, Y);
+            if(Token != null)
+                MessageBox.Show(Token.Name + ": HP: " + Token.HP + ", SDC: " + Token.SDC);
         }
 
         public void RedrawImage()
@@ -130,6 +134,7 @@ namespace CedenoB_ZombieGame
 			MenuItem addHandgun = new MenuItem();
 			MenuItem addShotgun = new MenuItem();
 			MenuItem addRifle = new MenuItem();
+            MenuItem onFire = new MenuItem();
 			//Item headers
 			addPlayer.Header = "Add Player";
 			addZed.Header = "Add Zed";
@@ -172,6 +177,7 @@ namespace CedenoB_ZombieGame
 			addHandgun.Header = "Add Handguns";
 			addShotgun.Header = "Add Shootguns";
 			addRifle.Header = "Add Rifle";
+            onFire.Header = "On Fire";
 			//Item Names
 			addPlayer.Name = "AddPlayer";
 			addZed.Name = "AddZed";
@@ -214,6 +220,7 @@ namespace CedenoB_ZombieGame
 			addHandgun.Name = "Handguns";
 			addShotgun.Name = "Shootguns";
 			addRifle.Name = "Rifle";
+            onFire.Name = "onFire";
 			//Events for all items in menu 
 			addPlayer.Click += this.right_Clicked;
 			addZed.Click += this.right_Clicked;
@@ -256,6 +263,7 @@ namespace CedenoB_ZombieGame
 			addHandgun.Click += this.right_Clicked;
 			addShotgun.Click += this.right_Clicked;
 			addRifle.Click += this.right_Clicked;
+            onFire.Click += onFire_Click;
 			//Player menu and submenu 
 			addPlayer.Items.Add(addWarrior);
 			addPlayer.Items.Add(addSharpShooter);
@@ -305,9 +313,26 @@ namespace CedenoB_ZombieGame
 			addHealth.Items.Add(addHealthPack);
 			addHealth.Items.Add(addHealthPots);
 			conMenu.Items.Add(addHealth);
+            conMenu.Items.Add(onFire);
 
 			this.ContextMenu = conMenu;
 		}
+
+        void onFire_Click(object sender, RoutedEventArgs e)
+        {
+            if (this.IsOpen == true && this.onFire == false)
+            {
+                this.onFire = true;
+                Label l = new Label();
+                l.Width = 50;
+                l.Height = 45;
+                ImageBrush brush = new ImageBrush();
+                imagePath = "Images/Fire.png";
+                brush.ImageSource = new BitmapImage(new Uri("Images/Fire.png", UriKind.Relative));
+                l.Background = brush;
+                this.Children.Add(l);
+            }
+        }
 
 
 
