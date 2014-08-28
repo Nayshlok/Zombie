@@ -573,7 +573,7 @@ namespace CedenoB_ZombieGame.UnitMovement
             }
         }
         #endregion
-
+        /*
         #region PickUpItem()
         public void PickUpItem(Character player, Item item, bool isWeapon, int[] square)
         {
@@ -617,7 +617,7 @@ namespace CedenoB_ZombieGame.UnitMovement
             }
         }
         #endregion
-
+        
 
         #region GiveItem()
         public void GiveItem(Character giver, Character givee, int inventoryIndex, bool isWeapon)
@@ -668,7 +668,7 @@ namespace CedenoB_ZombieGame.UnitMovement
             }
         }
         #endregion
-        
+        */
 
         #region MakeMeleeAttack()
         public void MakeMeleeAttack(Character player)
@@ -690,7 +690,7 @@ namespace CedenoB_ZombieGame.UnitMovement
             }
         }
         #endregion
-
+        
         #region MakeUn-AimedRangedAttack()
         public void MakeUnAimedRangeAttack(Character player)
         {
