@@ -23,6 +23,8 @@ namespace ZombieApocalypseSimulator
             base.SDC = base.DummyDice(48, min: 33);
             base.HP = base.DummyDice(21, min: 16);
             base.MoneyValue = base.DummyDice(10, min: 1);
+
+            getItem();
         }
     }
 }

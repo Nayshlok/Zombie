@@ -11,7 +11,7 @@ namespace ZombieApocalypseSimulator
     [Serializable()]
     public class Inventory
     {
-        ObservableCollection<Item> list = new ObservableCollection<Item>();
+        public ObservableCollection<CedenoB_ZombieGame.Item> list = new ObservableCollection<CedenoB_ZombieGame.Item>();
 
         public Weapon equippedWeapon { get; set; }
     }
