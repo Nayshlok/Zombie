@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using CedenoB_ZombieGame;
+using ZombieApocalypseSimulator.Model;
 
 namespace ZombieApocalypseSimulator
 {
@@ -79,6 +81,10 @@ namespace ZombieApocalypseSimulator
             get { return _SPD; }
             set { _SPD = value; }
         }
+
+        //public Inventory Inventory;
+
+        public Inventory Inventory { get; set; }
 
         private int _Strike;
         public int Strike
@@ -222,6 +228,42 @@ namespace ZombieApocalypseSimulator
             CanParry = true;
             AR = 14;
             Initiative = DummyDice(6, 3);
+            Inventory = new Inventory();
+
         }
+
+        public Character()
+        {
+
+        }
+
+        /// <summary>
+        /// Methods to calculate the base stats and damage
+        /// of newly created characters.
+        /// </summary>
+        /// <returns></returns>
+        #region BaseCalculationMethods
+
+        private int CalcBonusDamage()
+        {
+            int num = PS - 15;
+            if (num > 0)
+                return num;
+            else
+                return 0;
+        }
+
+        private int CalcPDSBonus()
+        {
+            double tmp = PE / 2;
+            return (int)(Math.Round(tmp, MidpointRounding.AwayFromZero));
+        }
+
+        public void ResetActionPoints()
+        {
+            SquaresLeft = (_SPD * 5) / 4;
+            SquaresToMove = (_SPD * 5) / 4;
+        }
+        #endregion
     }
 }

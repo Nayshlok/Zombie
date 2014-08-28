@@ -186,9 +186,9 @@ namespace CedenoB_ZombieGame.UnitMovement
             Square holder1;
             Square holder2;
 
-            for (int i = 0; i < 15; i++)
+            for (int i = 0; i < 25; i++)
             {
-                for (int j = 0; j < 15; j++)
+                for (int j = 0; j < 25; j++)
                 {
                     if (grid[i, j].Token != null)
                     {
@@ -545,7 +545,7 @@ namespace CedenoB_ZombieGame.UnitMovement
             //}
 
             int currentlyAllowedSquares = player.SquaresToMove;
-            Item item;
+            PlayerItem item;
 
             if (currentlyAllowedSquares >= dropItem)
             {

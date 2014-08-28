@@ -18,6 +18,7 @@ using zombieApocalypse.Combat;
 using CedenoB_ZombieGame.Model;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
+using ZombieApocalypseSimulator.Model;
 
 
 namespace CedenoB_ZombieGame
@@ -53,7 +54,19 @@ namespace CedenoB_ZombieGame
             this.SourceInitialized += (s, a) => this.WindowState = WindowState.Maximized;
             this.DataContext = this;
 			SetupEntityGrid();
+
+            this.Closed += MainWindowClosed;
+
 		}
+
+
+        void MainWindowClosed(object sender, EventArgs e)
+        {
+            App.Current.Shutdown();
+
+        }
+
+
 
 		private void SetupEntityGrid()
 		{

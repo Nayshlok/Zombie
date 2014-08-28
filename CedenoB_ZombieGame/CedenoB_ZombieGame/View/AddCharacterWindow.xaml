@@ -1,0 +1,131 @@
+﻿<Window x:Class="CedenoB_ZombieGame.AddCharacterWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="AddCharacterWindow" Height="410" Width="750">
+    <Grid x:Name="MainGrid" Background="Black">
+        <Grid Height="450" Width="700">
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <Grid x:Name="Test" Grid.Column="2">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="124*"></RowDefinition>
+                    <RowDefinition Height="124*"></RowDefinition>
+                    <RowDefinition Height="125*"></RowDefinition>
+                    <RowDefinition Height="1"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Button x:Name="AddItemButton"
+                Content="Add Item" Click="AddItemButton_Click" Grid.Column="0" Grid.Row="3" Margin="46,19,49,93" />
+                <ComboBox x:Name="ItemComboBox" Grid.Row="2" Margin="0,77,0,43" />
+                <DataGrid x:Name="inventoryDataGrid" AutoGenerateColumns="False" Grid.Column="0" Grid.Row="1" Margin="0,55,0,95" Grid.RowSpan="2">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="Name" Binding="{Binding Path=Name}"/>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </Grid>
+            <Grid x:Name="Name" Grid.Column="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1"></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition Height="1"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Label x:Name="PlayerNameLabel" Content="Name" FontSize="20" Height="40" Foreground="White" Grid.Row="2" VerticalAlignment="Top"></Label>
+                <TextBox x:Name="PlayerNameBox" Width="150"  Grid.Row="2" HorizontalAlignment="Right" HorizontalContentAlignment="Center" Background="Transparent" 
+                         BorderBrush="Red" Margin="0,0,15,0" Foreground="White" FontSize="20" VerticalContentAlignment="Bottom" CaretBrush="White" 
+                         Text="{Binding Path=Name, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" ></TextBox>
+                <Label x:Name="HPLabel" Content="HP" FontSize="20" Foreground="White" Grid.Row="4" VerticalAlignment="Top" ></Label>
+                <TextBox x:Name="HPBox" Width="100" Grid.Row="4" HorizontalAlignment="Right" HorizontalContentAlignment="Center" Background="Transparent" 
+                         BorderBrush="Red" Margin="0,0,15,0" Foreground="White" FontSize="20" VerticalContentAlignment="Bottom" CaretBrush="Transparent" 
+                         Text="{Binding Path=BaseHP}" Focusable="False"></TextBox>
+                <Label x:Name="SDCLabel"  Content="SDC" FontSize="20" Foreground="White" Grid.Row="5" VerticalAlignment="Top" ></Label>
+                <TextBox x:Name="SDCBox" Width="100" Grid.Row="5" HorizontalAlignment="Right" HorizontalContentAlignment="Center" Background="Transparent" 
+                         BorderBrush="Red" Margin="0,0,15,0" Foreground="White" FontSize="20" VerticalContentAlignment="Bottom" CaretBrush="Transparent" 
+                         Text="{Binding Path=BaseSDC}" Focusable="False"></TextBox>
+                <Label x:Name="APLabel" Content="AP" FontSize="20" Foreground="White" Grid.Row="6" VerticalAlignment="Top" ></Label>
+                <TextBox x:Name="APBox" Width="100" Grid.Row="6" HorizontalAlignment="Right" HorizontalContentAlignment="Center" Background="Transparent" 
+                         BorderBrush="Red" Margin="0,0,15,0" Foreground="White" FontSize="20" VerticalContentAlignment="Bottom" CaretBrush="Transparent" 
+                         Text="{Binding Path=ActionPoints}" Focusable="False"></TextBox>
+                <Label x:Name="PlayertypeLabel" Content="Base Stats:" FontSize="20" Foreground="White" Grid.Row="3" Height="40" Grid.Column="0" VerticalAlignment="Top" ></Label>
+                <Grid x:Name="PlayerTypeComboBox" Grid.Row="6" HorizontalAlignment="Right" Margin="0,0,15,0" >
+
+                </Grid>
+                <Button x:Name="RerollButton"
+                Content="Re-Roll" Click="Re_Roll_Click" Grid.Column="0" Grid.Row="8" Margin="120,0,0,0" />
+                <Button x:Name="SaveButton" Click="SaveClick"
+                Content="Save" Grid.Column="0" Grid.Row="8" Margin="0,0,120,0" MouseLeftButtonUp="SaveClick" />
+            </Grid>
+            <Grid x:Name="Stats" Grid.Column="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1"></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition Height="1"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Label x:Name="Status" Content="Character Stats:" FontSize="20" Foreground="White" Grid.Row="1" Grid.Column="0" VerticalAlignment="Top" ></Label>
+
+                <Label x:Name="IQLabel" Content="IQ" FontSize="20" Height="40" Foreground="White" Grid.Row="2" VerticalAlignment="Top"></Label>
+                <TextBox x:Name="IQBox" Width="100" Grid.Row="2" HorizontalAlignment="Right" HorizontalContentAlignment="Center" Background="Transparent" 
+                         BorderBrush="Red" Margin="0,0,15,0" Foreground="White" FontSize="20" VerticalContentAlignment="Bottom" CaretBrush="White" 
+                         Text="{Binding Path=IQ, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"></TextBox>
+
+                <Label x:Name="MELabel" Content="ME" FontSize="20" Height="40" Foreground="White" Grid.Row="3" VerticalAlignment="Top" ></Label>
+                <TextBox x:Name="MEBox" Width="100" Grid.Row="3" HorizontalAlignment="Right" HorizontalContentAlignment="Center" Background="Transparent" 
+                         BorderBrush="Red" Margin="0,0,15,0" Height="40" Foreground="White" FontSize="20" VerticalContentAlignment="Bottom" CaretBrush="White" 
+                         Text="{Binding Path=ME, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"></TextBox>
+
+                <Label x:Name="MALabel" Content="MA" FontSize="20" Height="40" Foreground="White" Grid.Row="4" VerticalAlignment="Top" ></Label>
+                <TextBox x:Name="MABox" Width="100" Grid.Row="4" HorizontalAlignment="Right" HorizontalContentAlignment="Center" Background="Transparent" 
+                         BorderBrush="Red" Margin="0,0,15,0" Foreground="White" FontSize="20" VerticalContentAlignment="Bottom" CaretBrush="White" 
+                         Text="{Binding Path=MA, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"></TextBox>
+
+                <Label x:Name="PSLabel" Content="PS" FontSize="20" Foreground="White" Grid.Row="5" VerticalAlignment="Top" ></Label>
+                <TextBox x:Name="PSBox" Width="100" Grid.Row="5" HorizontalAlignment="Right" HorizontalContentAlignment="Center" Background="Transparent" 
+                         BorderBrush="Red" Margin="0,0,15,0" Foreground="White" FontSize="20" VerticalContentAlignment="Bottom" CaretBrush="White" 
+                         Text="{Binding Path=PS, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"></TextBox>
+
+                <Label x:Name="PELabel" Content="PE" FontSize="20" Height="40" Foreground="White" Grid.Row="6" VerticalAlignment="Top" ></Label>
+                <TextBox x:Name="PEBox" Width="100" Grid.Row="6" HorizontalAlignment="Right" HorizontalContentAlignment="Center" Background="Transparent" 
+                         BorderBrush="Red" Margin="0,0,15,0" Foreground="White" FontSize="20" VerticalContentAlignment="Bottom" CaretBrush="White" 
+                         Text="{Binding Path=PE, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"></TextBox>
+
+                <Label x:Name="PPLabel" Content="PP" FontSize="20" Foreground="White" Grid.Row="7" VerticalAlignment="Top" ></Label>
+                <TextBox x:Name="PPBox" Width="100" Grid.Row="7" HorizontalAlignment="Right" HorizontalContentAlignment="Center" Background="Transparent" 
+                         BorderBrush="Red" Margin="0,0,15,0" Foreground="White" FontSize="20" VerticalContentAlignment="Bottom" CaretBrush="White" 
+                         Text="{Binding Path=PP, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"></TextBox>
+
+                <Label x:Name="PBLabel" Content="PB" FontSize="20" Height="40" Foreground="White" Grid.Row="8" VerticalAlignment="Top" ></Label>
+                <TextBox x:Name="PBBox" Width="100" Grid.Row="8" HorizontalAlignment="Right" HorizontalContentAlignment="Center" Background="Transparent" 
+                         BorderBrush="Red" Margin="0,0,15,0" Foreground="White" FontSize="20" VerticalContentAlignment="Bottom" CaretBrush="White" 
+                         Text="{Binding Path=PB, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"></TextBox>
+
+                <Label x:Name="SPDLabel" Content="SPD" FontSize="20" Height="40" Foreground="White" Grid.Row="9" VerticalAlignment="Top" ></Label>
+                <TextBox x:Name="SPDBox" Width="100" Grid.Row="9" HorizontalAlignment="Right" HorizontalContentAlignment="Center" Background="Transparent" 
+                         BorderBrush="Red" Margin="0,0,15,0" Foreground="White" FontSize="20" VerticalContentAlignment="Bottom" CaretBrush="White" 
+                         Text="{Binding Path=SPD, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"></TextBox>
+            </Grid>
+        </Grid>
+    </Grid>
+</Window>

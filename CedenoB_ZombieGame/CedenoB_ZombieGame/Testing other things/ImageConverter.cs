@@ -23,7 +23,7 @@ namespace CedenoB_ZombieGame
                     returnImage = new BitmapImage(new Uri("Images/Warrior.png", UriKind.Relative));
                 }
             }
-            else if (value is Item)
+            else if (value is PlayerItem)
             {
 
             }

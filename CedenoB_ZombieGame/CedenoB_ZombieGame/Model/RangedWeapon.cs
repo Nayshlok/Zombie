@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CedenoB_ZombieGame.Item.Ammo;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,5 +16,17 @@ namespace zombieApocalypse.Model
     public class RangedWeapon : Weapon
     {
         public RangedType weaponType { get; set; }
+
+        //
+        public AmmoType Ammo { get; set; }
+        public int Multiplier { get; set; }
+        public int Bursts { get; set; }
+        //
+        public RangedWeapon()
+        {
+            Multiplier = 1;
+            Bursts = 1;
+        }
+
     }
 }

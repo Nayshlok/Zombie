@@ -1,10 +1,14 @@
-﻿using CedenoB_ZombieGame.Model;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using CedenoB_ZombieGame.Item;
+using CedenoB_ZombieGame.Item.Item.Model;
+using CedenoB_ZombieGame.Item.Model;
+using CedenoB_ZombieGame.Model;
 using zombieApocalypse.Model;
+using ZombieApocalypseSimulator.Model;
 
 namespace ZombieApocalypseSimulator
 {
@@ -20,7 +24,7 @@ namespace ZombieApocalypseSimulator
     [Serializable()]
     public class Zed:Character
     {
-        private static Random rand= new Random();
+        private Random rand= new Random();
 
         private ClassZed _ZedClass;
         public ClassZed ZedClass
@@ -57,8 +61,8 @@ namespace ZombieApocalypseSimulator
             base.ME = 0;
         }
 
-        private CedenoB_ZombieGame.Item _DropItem;
-        public CedenoB_ZombieGame.Item DropItem
+        private PlayerItem _DropItem;
+        public PlayerItem DropItem
         {
             get { return _DropItem; }
             set { _DropItem = value; }
@@ -85,99 +89,99 @@ namespace ZombieApocalypseSimulator
             switch (i)
             {
                 case 1:
-                    DropItem = new CedenoB_ZombieGame.Model.BearTrap();
+                    //DropItem = new BearTrap();
                     break;
 
                 case 2:
-                    DropItem = new CedenoB_ZombieGame.Model.Defender();
+                    DropItem = new Defender();
                     break;
 
                 case 3:
-                    DropItem = new CedenoB_ZombieGame.Model.Desert();
+                    DropItem = new Desert();
                     break;
                 
                 case 4:
-                    DropItem = new CedenoB_ZombieGame.Model.Farmer();
+                    DropItem = new Farmer();
                     break;
 
                 case 5:
-                    DropItem = new CedenoB_ZombieGame.Model.Gangsta();
+                    DropItem = new Gangsta();
                     break;
 
                 case 6:
-                    DropItem = new CedenoB_ZombieGame.Model.HandgunAmmo();
+                    DropItem = new HandgunAmmo();
                     break;
                     
                 case 7:
-                    DropItem = new CedenoB_ZombieGame.Model.HealthPack();
+                    //DropItem = new HealthPack();
                     break;
                     
                 case 8:
-                    DropItem = new CedenoB_ZombieGame.Model.HealthPot();
+                    //DropItem = new HealthPot();
                     break;
 
                 case 9:
-                    DropItem = new CedenoB_ZombieGame.Model.Hunter();
+                    DropItem = new Hunter();
                     break;
 
                 case 11:
-                    DropItem = new CedenoB_ZombieGame.Model.Israli();
+                    DropItem = new Israli();
                     break;
 
                 case 12:
-                    DropItem = new CedenoB_ZombieGame.Model.LargeCrowbar();
+                    DropItem = new LargeCrowbar();
                     break;
 
                 case 13:
-                    DropItem = new CedenoB_ZombieGame.Model.Machete();
+                    DropItem = new Machete();
                     break;
 
                 case 14:
-                    DropItem = new CedenoB_ZombieGame.Model.Milita();
+                    DropItem = new Milita();
                     break;
 
                 case 15:
-                    DropItem = new CedenoB_ZombieGame.Model.RifleAmmo();
+                    DropItem = new RifleAmmo();
                     break;
 
                 case 16:
-                    DropItem = new CedenoB_ZombieGame.Model.Rouge();
+                    DropItem = new Rouge();
                     break;
 
                 case 17:
-                    DropItem = new CedenoB_ZombieGame.Model.ShotgunAmmo();
+                    DropItem = new ShotgunAmmo();
                     break;
 
                 case 18:
-                    DropItem = new CedenoB_ZombieGame.Model.SludgeHammer();
+                    DropItem = new SludgeHammer();
                     break;
 
                 case 19:
-                    DropItem = new CedenoB_ZombieGame.Model.Slugger();
+                    DropItem = new Slugger();
                     break;
 
                 case 20:
-                    DropItem = new CedenoB_ZombieGame.Model.SmallCrowbar();
+                    DropItem = new SmallCrowbar();
                     break;
 
                 case 21:
-                    DropItem = new CedenoB_ZombieGame.Model.Sniper();
+                    DropItem = new Sniper();
                     break;
 
                 case 22:
-                    DropItem = new CedenoB_ZombieGame.Model.Special();
+                    DropItem = new Special();
                     break;
 
                 case 23:
-                    DropItem = new CedenoB_ZombieGame.Model.Sport();
+                    DropItem = new Sport();
                     break;
 
                 case 24:
-                    DropItem = new CedenoB_ZombieGame.Model.SurvivalKnife();
+                    DropItem = new SurvivalKnife();
                     break;
 
                 case 25:
-                    DropItem = new CedenoB_ZombieGame.Model.Turret();
+                    //DropItem = new Turret();
                     break;
 
                 default:

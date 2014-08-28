@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using zombieApocalypse.Model;
+using ZombieApocalypseSimulator.Model;
 
 namespace ZombieApocalypseSimulator
 {
@@ -99,8 +100,8 @@ namespace ZombieApocalypseSimulator
             return bonus;
         }
 
-        private CedenoB_ZombieGame.Item _ItemAt;
-        public CedenoB_ZombieGame.Item ItemAt
+        private PlayerItem _ItemAt;
+        public PlayerItem ItemAt
         {
             get
             {
@@ -114,12 +115,12 @@ namespace ZombieApocalypseSimulator
 
         public void setItemAt(int i)
         {
-            ItemAt = inventory.list.ElementAt(i);
+            ItemAt = inventory.itemList.ElementAt(i);
         }
 
         public void killItemAt(int i)
         {
-            inventory.list.RemoveAt(i);
+            inventory.itemList.RemoveAt(i);
         }
     }
 }

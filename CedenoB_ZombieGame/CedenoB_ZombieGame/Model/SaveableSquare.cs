@@ -11,8 +11,8 @@ namespace CedenoB_ZombieGame.Model
     [Serializable()]
     public class SaveableSquare
     {
-        private List<Item> _Items = new List<Item>();
-        public List<Item> Items
+        private List<PlayerItem> _Items = new List<PlayerItem>();
+        public List<PlayerItem> Items
         {
             get { return _Items; }
             set { _Items = value; }
