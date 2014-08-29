@@ -1,0 +1,96 @@
+﻿<Window x:Class="CedenoB_ZombieGame.Shops.PlayerTrading"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Trade!" Height="350" Width="525"
+        Background="Black">
+    <Window.Resources>
+        <Style  TargetType="{x:Type ListBoxItem}">
+            <Style.Triggers>
+                <Trigger Property="ItemsControl.AlternationIndex" Value="0">
+                    <Setter Property="Background" Value="#808080"></Setter>
+                </Trigger>
+                <Trigger Property="ItemsControl.AlternationIndex" Value="1">
+                    <Setter Property="Background" Value="#333333"></Setter>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+    </Window.Resources>
+    <Grid x:Name="mainPanel">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="40*">
+
+            </ColumnDefinition>
+            <ColumnDefinition  Width="20*">
+
+            </ColumnDefinition>
+            <ColumnDefinition  Width="40*">
+
+            </ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <StackPanel x:Name="playerPanel" Grid.Column="0">
+            <Label Grid.Column="0" Foreground="LimeGreen" Content="{Binding Name}" x:Name="playerNameLeft"></Label>
+            <Grid>
+                <ListBox x:Name="playerItemsLeft" Height="300"
+                         SelectionMode="Extended"
+                     ScrollViewer.VerticalScrollBarVisibility="Visible"
+                     AlternationCount="2"
+                         Background="Black"
+                         BorderBrush="Gray"
+                         MouseDoubleClick="playerItems_MouseDoubleClick">
+                    <ListBox.ItemTemplate >
+                        <DataTemplate>
+                            <UniformGrid Columns="2"
+                                     Rows="4">
+                                <Label Height="30" Width="100" Foreground="LimeGreen">Item:</Label>
+                                <Label Content="{Binding Weapon}" Height="30" Width="100" Foreground="LimeGreen"></Label>
+                                <Label Height="30" Width="100" Foreground="LimeGreen">Buy Price:</Label>
+                                <Label Content="{Binding Price}" Height="30" Width="100" Foreground="LimeGreen"></Label>
+                                <Label Height="30" Width="100" Foreground="LimeGreen">Sell Price</Label>
+                                <Label Content="{Binding sellPrice}" Height="30" Width="100" Foreground="LimeGreen"></Label>
+                                <Label Height="30" Width="100" Foreground="LimeGreen">Description</Label>
+                                <Label Content="{Binding description}" Height="30" Width="100" Foreground="LimeGreen"></Label>
+                            </UniformGrid>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+            </Grid>
+        </StackPanel>
+        <StackPanel x:Name="actionPanel" Grid.Column="1">
+        </StackPanel>
+        <StackPanel Grid.Column="1">
+            <Label Height="25"></Label>
+            <Button x:Name="GiveToRightName"  Background="Black" Foreground="LimeGreen" Height="30" Click="GiveToRightName_Click"></Button>
+            <Button x:Name="GiveToLeftName"  Background="Black" Foreground="LimeGreen" Height="30" Click="GiveToLeftName_Click"></Button>
+        </StackPanel>
+        <StackPanel x:Name="shopPanel" Grid.Column="2">
+
+            <Label x:Name="playerNameRight" Grid.Column="2" Foreground="LimeGreen" Content="{Binding Name}"></Label>
+            <Grid>
+                <ListBox x:Name="playerItemsRight" Height="300"
+                         SelectionMode="Extended"
+                     ScrollViewer.VerticalScrollBarVisibility="Visible"
+                     AlternationCount="2"
+                     Background="Black"
+                     MouseDoubleClick="shopItems_MouseDoubleClick"
+                     >
+                    <ListBox.ItemTemplate>
+                        <DataTemplate >
+                            <UniformGrid Columns="2"
+                                     Rows="4">
+                                <Label Height="30" Width="100" Foreground="LimeGreen">Item:</Label>
+                                <Label Content="{Binding Weapon}" Height="30" Width="100" Foreground="LimeGreen"></Label>
+                                <Label Height="30" Width="100" Foreground="LimeGreen">Buy Price:</Label>
+                                <Label Content="{Binding Price}" Height="30" Width="100" Foreground="LimeGreen"></Label>
+                                <Label Height="30" Width="100" Foreground="LimeGreen">Sell Price</Label>
+                                <Label Content="{Binding sellPrice}" Height="30" Width="100" Foreground="LimeGreen"></Label>
+                                <Label Height="30" Width="100" Foreground="LimeGreen">Description</Label>
+                                <Label Content="{Binding description}" Height="30" Width="100" Foreground="LimeGreen"></Label>
+                            </UniformGrid>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+            </Grid>
+        </StackPanel>
+    </Grid>
+
+</Window>
