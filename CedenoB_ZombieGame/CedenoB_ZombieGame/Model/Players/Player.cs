@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Media.Imaging;
 using zombieApocalypse.Model;
 using ZombieApocalypseSimulator.Model;
 
@@ -25,12 +26,12 @@ namespace ZombieApocalypseSimulator
             set { _PlayerClass = value; }
         }
 
-        private Inventory _Inventory;
-        public Inventory inventory
-        {
-            get { return _Inventory; }
-            set { _Inventory = value; }
-        }
+        //private Inventory _Inventory;
+        //public Inventory Inventory
+        //{
+        //    get { return _Inventory; }
+        //    set { _Inventory = value; }
+        //}
         private int _ZombifyChance;
         public int ZombifyChance
         {
@@ -45,33 +46,33 @@ namespace ZombieApocalypseSimulator
             set { _Money = value; }
         }
 
-        public Player(string name):base(name)
+        public Player(string name, BitmapImage image):base(name, image)
         {
-            inventory = new Inventory();
-            inventory.equippedWeapon = new SmallCrowbar();
+            this.Inventory = new Inventory();
+            this.Inventory.equippedWeapon = new SmallCrowbar();
         }
 
         public int bonusToHit()
         {
             int bonus = 0;
 
-            if (this is Warrior && inventory.equippedWeapon is MeleeWeapon)
+            if (this is Warrior && Inventory.equippedWeapon is MeleeWeapon)
             {
                 bonus = 1;
             }
-            if (this is Warrior && inventory.equippedWeapon is RangedWeapon)
+            if (this is Warrior && Inventory.equippedWeapon is RangedWeapon)
             {
                 bonus = -3;
             }
             if (this is SharpShooter)
             {
-                if (inventory.equippedWeapon is RangedWeapon)
+                if (Inventory.equippedWeapon is RangedWeapon)
                 {
-                    if (((RangedWeapon)inventory.equippedWeapon).weaponType == RangedType.Rifle)
+                    if (((RangedWeapon)Inventory.equippedWeapon).weaponType == RangedType.Rifle)
                     {
                         bonus = 2;
                     }
-                    else if (((RangedWeapon)inventory.equippedWeapon).weaponType == RangedType.Handgun)
+                    else if (((RangedWeapon)Inventory.equippedWeapon).weaponType == RangedType.Handgun)
                     {
                         bonus = 1;
                     }
@@ -83,13 +84,13 @@ namespace ZombieApocalypseSimulator
             }
             if (this is Survivalist)
             {
-                if (inventory.equippedWeapon is SurvivalKnife || inventory.equippedWeapon is SmallCrowbar)
+                if (Inventory.equippedWeapon is SurvivalKnife || Inventory.equippedWeapon is SmallCrowbar)
                 {
                     bonus = 2;
                 }
-                else if (inventory.equippedWeapon is RangedWeapon)
+                else if (Inventory.equippedWeapon is RangedWeapon)
                 {
-                    RangedWeapon tempWeapon = (RangedWeapon)inventory.equippedWeapon;
+                    RangedWeapon tempWeapon = (RangedWeapon)Inventory.equippedWeapon;
                     if (tempWeapon.weaponType == RangedType.Shotgun)
                     {
                         bonus = 2;
@@ -115,12 +116,12 @@ namespace ZombieApocalypseSimulator
 
         public void setItemAt(int i)
         {
-            ItemAt = inventory.itemList.ElementAt(i);
+            ItemAt = Inventory.itemList.ElementAt(i);
         }
 
         public void killItemAt(int i)
         {
-            inventory.itemList.RemoveAt(i);
+            Inventory.itemList.RemoveAt(i);
         }
     }
 }

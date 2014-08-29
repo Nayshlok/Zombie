@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Media.Imaging;
 using zombieApocalypse.Model;
 
 
@@ -11,7 +12,8 @@ namespace ZombieApocalypseSimulator
     [Serializable()]
     public class Tank:Zed
     {
-        public Tank(string name):base(name)
+        public Tank(string name)
+            : base(name, new BitmapImage(new Uri("Images/Tank.png", UriKind.Relative)))
         {
             ZedClass = ClassZed.Tank;
             Strike += 2;

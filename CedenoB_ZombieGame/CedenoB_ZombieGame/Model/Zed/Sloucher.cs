@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Media.Imaging;
 using zombieApocalypse.Model;
 
 namespace ZombieApocalypseSimulator
@@ -10,8 +11,8 @@ namespace ZombieApocalypseSimulator
     [Serializable()]
     public class Sloucher:Zed
     {
-        public Sloucher(string name):
-            base(name)
+        public Sloucher(string name)
+            : base(name, new BitmapImage(new Uri("Images/Sloucher.png", UriKind.Relative)))
         {
             base.ZedClass = ClassZed.Sloucher;
             base.Strike += 2;

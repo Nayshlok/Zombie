@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Media.Imaging;
 using zombieApocalypse.Model;
 
 namespace ZombieApocalypseSimulator
@@ -10,7 +11,7 @@ namespace ZombieApocalypseSimulator
     [Serializable()]
     public class Shank:Zed
     {
-        public Shank(string name):base(name)
+        public Shank(string name):base(name, new BitmapImage(new Uri("Images/Shank.png", UriKind.Relative)))
         {
             ZedClass = ClassZed.Shank;
             Strike += 3;

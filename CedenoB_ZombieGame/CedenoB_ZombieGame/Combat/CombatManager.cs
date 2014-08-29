@@ -97,7 +97,7 @@ namespace zombieApocalypse.Combat
             MeleePPBonus = 0;
             if (attacker is Player)
             {
-                Weapon attackerWeapon = ((Player)attacker).inventory.equippedWeapon;
+                Weapon attackerWeapon = ((Player)attacker).Inventory.equippedWeapon;
                 if (attackerWeapon is MeleeWeapon)
                 {
                     MeleePPBonus = ((attacker.PP - 14) / 2);
@@ -170,7 +170,7 @@ namespace zombieApocalypse.Combat
             if(defender is Zed)
             {
                 Player tempPlayer = (Player)attacker;
-                if (!tempPlayer.inventory.equippedWeapon.ignoreAR)
+                if (!tempPlayer.Inventory.equippedWeapon.ignoreAR)
                 {
                     AR += 10;
                 }
@@ -265,8 +265,8 @@ namespace zombieApocalypse.Combat
             if (attacker is Player)
             {
                 Player tempPlayer = (Player)attacker;
-                damage += tempPlayer.inventory.equippedWeapon.baseDamage.Roll();
-                damage += tempPlayer.inventory.equippedWeapon.BonusDamage;
+                damage += tempPlayer.Inventory.equippedWeapon.baseDamage.Roll();
+                damage += tempPlayer.Inventory.equippedWeapon.BonusDamage;
             }
             else
             {

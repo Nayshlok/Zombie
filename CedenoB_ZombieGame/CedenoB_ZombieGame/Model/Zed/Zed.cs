@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Media.Imaging;
 using CedenoB_ZombieGame.Item;
 using CedenoB_ZombieGame.Item.Item.Model;
 using CedenoB_ZombieGame.Item.Model;
@@ -54,7 +55,7 @@ namespace ZombieApocalypseSimulator
             set { _MoneyValue = value; }
         }
         
-        public Zed(string name):base(name)
+        public Zed(string name, BitmapImage image):base(name, image)
         {
             base.IQ = 0;
             base.MA = 0;

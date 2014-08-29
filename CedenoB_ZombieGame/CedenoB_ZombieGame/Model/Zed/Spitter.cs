@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Media.Imaging;
 using zombieApocalypse.Model;
 
 namespace ZombieApocalypseSimulator
@@ -10,7 +11,8 @@ namespace ZombieApocalypseSimulator
     [Serializable()]
     public class Spitter:Zed
     {
-        public Spitter(string name):base(name)
+        public Spitter(string name)
+            : base(name, new BitmapImage(new Uri("Images/Spitter.png", UriKind.Relative)))
         {
             ZedClass = ClassZed.Spitter;
             Strike += 3;

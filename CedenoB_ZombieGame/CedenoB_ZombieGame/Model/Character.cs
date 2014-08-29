@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
 using CedenoB_ZombieGame;
 using ZombieApocalypseSimulator.Model;
 
@@ -177,6 +179,13 @@ namespace ZombieApocalypseSimulator
             set { _canParry = value; }
         }
 
+        private ImageSource _CharacterImage;
+        public ImageSource CharacterImage
+        {
+            get { return _CharacterImage; }
+            set { _CharacterImage = value; }
+        }
+
         public override string ToString()
         {
             return Name + ": HP = " + HP + ", SDC = " + SDC;
@@ -206,7 +215,7 @@ namespace ZombieApocalypseSimulator
             return result;
         }
 
-        public Character(string name)
+        public Character(string name, BitmapImage image)
         {
             SDC = DummyDice(6, 3);
             PS = DummyDice(6, 3);
@@ -228,8 +237,7 @@ namespace ZombieApocalypseSimulator
             CanParry = true;
             AR = 14;
             Initiative = DummyDice(6, 3);
-            Inventory = new Inventory();
-
+            CharacterImage = image;
         }
 
         public Character()

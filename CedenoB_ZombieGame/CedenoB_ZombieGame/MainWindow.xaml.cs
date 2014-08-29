@@ -55,6 +55,26 @@ namespace CedenoB_ZombieGame
             this.DataContext = this;
 			SetupEntityGrid();
 
+            ScrollViewer playerScroll = new ScrollViewer();
+            playerScroll.Content = Player_Area;
+            ScrollViewer zedScroll = new ScrollViewer();
+            zedScroll.Content = Zed_Area;
+
+            Warrior test = new Warrior("TEST");
+            Console.WriteLine("\n" + test.Inventory.equippedWeapon.Name + "\n");
+
+            player1.DataContext = new Warrior("WARRIOR TEST");
+            player2.DataContext = new SharpShooter("SHARPSHOOTER TEST");
+            player3.DataContext = new Survivalist("SURVIVALIST TEST");
+            player4.DataContext = new Warrior("WARRIOR 2 TEST");
+            player5.DataContext = new SharpShooter("SHARPSHOOTER 2 TEST");
+
+            zed1.DataContext = new Sloucher("SLOUCHER TEST 1");
+            zed2.DataContext = new FastAttack("FAST ATTACK TEST 1");
+            zed3.DataContext = new Shank("SHANK TEST 1");
+            zed4.DataContext = new Tank("TANK TEST 1");
+            zed5.DataContext = new Spitter("SPITTER TEST 1");
+
             this.Closed += MainWindowClosed;
 
 		}

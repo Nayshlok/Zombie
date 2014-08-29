@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Media.Imaging;
 using zombieApocalypse.Model;
 
 namespace ZombieApocalypseSimulator
@@ -10,7 +11,7 @@ namespace ZombieApocalypseSimulator
     [Serializable()]
     public class FastAttack:Zed
     {
-        public FastAttack(string name):base(name)
+        public FastAttack(string name):base(name, new BitmapImage(new Uri("Images/FastAttack.png", UriKind.Relative)))
         {
             ZedClass = ClassZed.Fast_Attack;
             Strike += 2;
