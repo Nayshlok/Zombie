@@ -14,6 +14,7 @@ namespace ZombieApocalypseSimulator
     public class Character
     {
 
+		public bool IsAlive { get; set; }
         private int _HP;
         public int HP
         {

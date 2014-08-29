@@ -906,5 +906,75 @@ namespace CedenoB_ZombieGame
             return Token.ToString();
         }
 
+//BRYAN CODE
+        //ZOMBIFY PLACER
+        public void placeZombie(Zed newzed)
+        {
+            if (newzed.ZedClass == ClassZed.Sloucher)
+            {
+                Label l = new Label();
+                Token = new Sloucher("Sloucher");
+                l.Width = 40;
+                l.Height = 40;
+                ImageBrush brush = new ImageBrush();
+                brush.ImageSource = new BitmapImage(new Uri("Images/Sloucher.png", UriKind.Relative));
+                l.Background = brush;
+                IsOpen = false;
+                this.Children.Add(l);
+            }
+            else if (newzed.ZedClass == ClassZed.Fast_Attack)
+            {
+                Label l = new Label();
+                Token = new FastAttack("FastAttack");
+                l.Width = 40;
+                l.Height = 40;
+                ImageBrush brush = new ImageBrush();
+                brush.ImageSource = new BitmapImage(new Uri("Images/FastAttack.png", UriKind.Relative));
+                l.Background = brush;
+                IsOpen = false;
+                this.Children.Add(l);
+
+            }
+            else if (newzed.ZedClass == ClassZed.Tank)
+            {
+                Label l = new Label();
+                Token = new Tank("Tank");
+                l.Width = 40;
+                l.Height = 40;
+                ImageBrush brush = new ImageBrush();
+                brush.ImageSource = new BitmapImage(new Uri("Images/Tank.png", UriKind.Relative));
+                l.Background = brush;
+                IsOpen = false;
+                this.Children.Add(l);
+            }
+
+            else if (newzed.ZedClass == ClassZed.Shank)
+            {
+                Label l = new Label();
+                Token = new Shank("Shank");
+                l.Width = 40;
+                l.Height = 40;
+                ImageBrush brush = new ImageBrush();
+                brush.ImageSource = new BitmapImage(new Uri("Images/Shank.png", UriKind.Relative));
+                l.Background = brush;
+                IsOpen = false;
+                this.Children.Add(l);
+            }
+
+            else if (newzed.ZedClass == ClassZed.Spitter)
+            {
+                Label l = new Label();
+                Token = new Spitter("Spitter");
+                l.Width = 40;
+                l.Height = 40;
+                ImageBrush brush = new ImageBrush();
+                brush.ImageSource = new BitmapImage(new Uri("Images/Spitter.png", UriKind.Relative));
+                l.Background = brush;
+                IsOpen = false;
+                this.Children.Add(l);
+            }
+        }
+        //END CODE
+
 	}
 }

@@ -17,6 +17,16 @@ namespace ZombieApocalypseSimulator
     public class PlayerItem : Entity
     {
 
+        //Bryan ADDED CODE
+        public string Weapon { get; set; }
+        public double Price { get; set; }
+        public double sellPrice { get; set; }
+        public string description { get; set; }
+        public double getPrice()
+        {
+            return this.Price;
+        }
+        //Bryan ADDED CODE
         private GunAmmo DetermineAmmoPackType(GunAmmo ammo, int amount, Character character)
         {
             if (ammo.Type == AmmoType.Handgun)

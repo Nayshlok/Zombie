@@ -4,7 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Media.Imaging;
+using CedenoB_ZombieGame.Items.Others;
 using zombieApocalypse.Model;
+using zombieApocalypse.Model.Melee;
 using ZombieApocalypseSimulator.Model;
 
 namespace ZombieApocalypseSimulator
@@ -19,6 +21,71 @@ namespace ZombieApocalypseSimulator
     [Serializable()]
     public class Player:Character
     {
+        //BRYAN CODE START
+        public Random rand = new Random();
+        private int turnsDead { get; set; }
+        public int baseAR { get; set; }
+        public void addToInventory(PlayerItem item)
+        {
+            Inventory.addToInv(item);
+        }
+        public void removeFromInventory(PlayerItem item)
+        {
+            Inventory.remove(item);
+        }
+
+        public bool isZombie { get; set; }
+        public Zed Zombify()
+        {
+
+
+            if (this.IsLiving == false)
+            {
+                this.ZombifyChance = 5 * turnsDead; //Original 5*turnsDead;
+                int random = rand.Next(0, 100);
+                //Chance to become Zombie
+                if (random <= this.ZombifyChance)
+                {
+                    Zed returned;
+                    this.isZombie = true;
+                    random = rand.Next(0, 102);
+                    //Zombie Type radomness
+                    if (random >= 0 && random <= 39)
+                    {
+                        returned = new Sloucher(this.Name);
+                    }
+                    else if (random >= 40 && random <= 59)
+                    {
+                        returned = new FastAttack(this.Name);
+                    }
+                    else if (random >= 60 && random <= 79)
+                    {
+                        returned = new Spitter(this.Name);
+                    }
+                    else if (random >= 80 && random <= 89)
+                    {
+                        returned = new Shank(this.Name);
+                    }
+                    else if (random >= 90 && random <= 99)
+                    {
+                        returned = new Tank(this.Name);
+                    }
+                    //This else is here to handle any randomization that my go wrong.
+                    else
+                    {
+                        returned = new Sloucher(this.Name);
+                    }
+                    return returned;
+                }
+            }
+            else
+            {
+                return null;
+            }
+            this.turnsDead = this.turnsDead + 1;
+            return null;
+        }
+
         private ClassPlayer _PlayerClass;
         public ClassPlayer PlayerClass
         {
@@ -50,6 +117,22 @@ namespace ZombieApocalypseSimulator
         {
             this.Inventory = new Inventory();
             this.Inventory.equippedWeapon = new SmallCrowbar();
+        }
+
+        public void bonusToAR()
+        {
+                       
+            if (this is Player && Inventory.equippedWeaponDefensive is Shield)
+            {
+                this.baseAR = this.AR;
+                this.AR = this.AR + 4;
+            }
+            else
+            {
+
+                this.AR = baseAR;
+            }
+
         }
 
         public int bonusToHit()

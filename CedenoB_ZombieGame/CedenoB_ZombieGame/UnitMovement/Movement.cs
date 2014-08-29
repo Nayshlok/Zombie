@@ -253,7 +253,7 @@ namespace CedenoB_ZombieGame.UnitMovement
         //}
         #endregion
 
-        #region checkCharacterInitiatives()
+       /* #region checkCharacterInitiatives()
         public void checkCharactersInitiatives()
         {
 
@@ -311,7 +311,7 @@ namespace CedenoB_ZombieGame.UnitMovement
 
             return newInit;
         }
-        #endregion
+        #endregion*/
 
         #region MoveCharacter()
         public bool MoveCharacter(Character player, int[] moveTo, int[] currentLocation = null)
@@ -847,6 +847,7 @@ namespace CedenoB_ZombieGame.UnitMovement
         #region Zeds
 
         #region calcZedAttack()
+        //Call this for Zed move
         public void calcZedAttack(Zed zed)
         {
             for (int i = 0; i < 15; i++)

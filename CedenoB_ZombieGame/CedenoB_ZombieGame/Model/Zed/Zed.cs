@@ -9,6 +9,7 @@ using CedenoB_ZombieGame.Item.Item.Model;
 using CedenoB_ZombieGame.Item.Model;
 using CedenoB_ZombieGame.Model;
 using zombieApocalypse.Model;
+using zombieApocalypse.Model.Melee;
 using ZombieApocalypseSimulator.Model;
 
 namespace ZombieApocalypseSimulator

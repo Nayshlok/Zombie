@@ -19,6 +19,8 @@ using CedenoB_ZombieGame.Model;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 using ZombieApocalypseSimulator.Model;
+using zombieApocalypse.Model.Melee;
+using CedenoB_ZombieGame.Items.Others;
 
 
 namespace CedenoB_ZombieGame
@@ -351,6 +353,8 @@ namespace CedenoB_ZombieGame
                     fireDamage(s);
                 }
             }
+            attacker = new Warrior("Test");
+            defender = new SharpShooter("Test2");
         }
 
         public void fireDamage(Square s)
@@ -452,6 +456,45 @@ namespace CedenoB_ZombieGame
         {
             endTurnCheck();
         }
+
+        private void openTrade_Click()
+        {
+
+            var window = new Shops.Shop((Player)attacker);
+            window.Show();
+        }
+        //OPEN TRADE TEST
+        private void OpenShop()
+        {
+            var window = new Shops.PlayerTrading((Player)attacker, (Player)defender);
+            window.Show();
+        }
+        //ZOMBIFY
+        private void Zombify_Click(object sender, RoutedEventArgs e)
+        {
+            Square zombieSquare;
+            for (int i = 0; i < 25; i++)
+            {
+                for (int j = 0; j < 25; j++)
+                {
+                    if (GameBoard[i, j].Token is Player)
+                    {
+                        zombieSquare = GameBoard[i, j];
+                        Player a = (Player)GameBoard[i, j].Token;
+                        Zed newzed = a.Zombify();
+                        if (newzed != null)
+                        {
+                            zombieSquare.IsOpen = true;
+                            zombieSquare.Children.Clear();
+                            GameGrid.Children.Remove(GameBoard[i, j]);
+                            zombieSquare.placeZombie(newzed);
+                        }
+                    }
+                }
+            }
+        }
+        //END TESTING
+        
 
 
     }

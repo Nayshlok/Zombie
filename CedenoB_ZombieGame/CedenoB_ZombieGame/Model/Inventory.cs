@@ -30,7 +30,30 @@ namespace ZombieApocalypseSimulator.Model
         public HandgunAmmo HandgunAmmo = new HandgunAmmo();
         public ShotgunAmmo ShotgunAmmo = new ShotgunAmmo();
         protected int MaxAmmoAmount = 100;
+        //BRYAN CODE START
+        public Defensive equippedWeaponDefensive { get; set; }
 
+        public ObservableCollection<PlayerItem> getInv()
+        {
+            return this.itemList;
+        }
+        public int listSize()
+        {
+           return this.itemList.Count;
+        }
+        public void addToInv(PlayerItem item)
+        {
+            this.itemList.Add(item);
+        }
+        public PlayerItem getItem(int i)
+        {
+            return this.itemList[i];
+        }
+        public void remove(PlayerItem item)
+        {
+            this.itemList.Remove(item);
+        }
+        //BRYAN CODE END
         public void RemoveRifleAmmo(int amount)
         {
             RifleAmmo.Qty -= amount;
