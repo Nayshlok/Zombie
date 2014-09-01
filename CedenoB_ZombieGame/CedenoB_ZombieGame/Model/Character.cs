@@ -22,11 +22,11 @@ namespace ZombieApocalypseSimulator
             set { _HP = value; }
         }
         
-        private int _SDC;
-        public int SDC
+        private int _SCD;
+        public int SCD
         {
-            get { return _SDC; }
-            set { _SDC = value; }
+            get { return _SCD; }
+            set { _SCD = value; }
         }
 
         private int _PS;
@@ -189,7 +189,7 @@ namespace ZombieApocalypseSimulator
 
         public override string ToString()
         {
-            return Name + ": HP = " + HP + ", SDC = " + SDC;
+            return Name + ": HP = " + HP + ", SDC = " + SCD;
         }
 
         private Random rand = new Random();
@@ -218,7 +218,7 @@ namespace ZombieApocalypseSimulator
 
         public Character(string name, BitmapImage image)
         {
-            SDC = DummyDice(6, 3);
+            SCD = DummyDice(6, 3);
             PS = DummyDice(6, 3);
             PP = DummyDice(6, 3);
             PE = DummyDice(6, 3);

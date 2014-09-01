@@ -21,7 +21,7 @@ namespace ZombieApocalypseSimulator
             base.PE = base.DummyDice(21, min: 16);
             base.SPD = base.DummyDice(10, min: 7);
             base.BaseDamage = new Dice(1, 6);
-            base.SDC = base.DummyDice(48, min: 33);
+            base.SCD = base.DummyDice(48, min: 33);
             base.HP = base.DummyDice(21, min: 16);
             base.MoneyValue = base.DummyDice(10, min: 1);
 

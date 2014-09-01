@@ -10,12 +10,14 @@ using System.Text;
 using System.Threading.Tasks;
 using ZombieApocalypseSimulator.Model;
 using CedenoB_ZombieGame.Model;
+using System.Windows.Media;
 
 namespace ZombieApocalypseSimulator
 {
     [Serializable()]
     public class PlayerItem : Entity
     {
+        public ImageSource ItemImage { get; set; }
 
         //Bryan ADDED CODE
         public string Weapon { get; set; }

@@ -62,20 +62,12 @@ namespace CedenoB_ZombieGame
             ScrollViewer zedScroll = new ScrollViewer();
             zedScroll.Content = Zed_Area;
 
-            Warrior test = new Warrior("TEST");
-            Console.WriteLine("\n" + test.Inventory.equippedWeapon.Name + "\n");
+            Warrior test = new Warrior("test");
+            Console.WriteLine(test.Inventory.weapons.GetType());
 
             player1.DataContext = new Warrior("WARRIOR TEST");
-            player2.DataContext = new SharpShooter("SHARPSHOOTER TEST");
-            player3.DataContext = new Survivalist("SURVIVALIST TEST");
-            player4.DataContext = new Warrior("WARRIOR 2 TEST");
-            player5.DataContext = new SharpShooter("SHARPSHOOTER 2 TEST");
 
             zed1.DataContext = new Sloucher("SLOUCHER TEST 1");
-            zed2.DataContext = new FastAttack("FAST ATTACK TEST 1");
-            zed3.DataContext = new Shank("SHANK TEST 1");
-            zed4.DataContext = new Tank("TANK TEST 1");
-            zed5.DataContext = new Spitter("SPITTER TEST 1");
 
             this.Closed += MainWindowClosed;
 
@@ -290,7 +282,7 @@ namespace CedenoB_ZombieGame
                         Grid.SetRow(AttackerSDCLabel, 5);
                         combatView.Children.Add(AttackerSDCLabel);
                         Label AttackerSDC = new Label();
-                        AttackerSDC.Content = attacker.SDC;
+                        AttackerSDC.Content = attacker.SCD;
                         Grid.SetRow(AttackerSDC, 5);
                         Grid.SetColumn(AttackerSDC, 1);
                         combatView.Children.Add(AttackerSDC);
@@ -300,7 +292,7 @@ namespace CedenoB_ZombieGame
                         Grid.SetColumn(DefenderSDCLabel, 2);
                         combatView.Children.Add(DefenderSDCLabel);
                         Label DefenderSDC = new Label();
-                        DefenderSDC.Content = defender.SDC;
+                        DefenderSDC.Content = defender.SCD;
                         Grid.SetRow(DefenderSDC, 5);
                         Grid.SetColumn(DefenderSDC, 3);
                         combatView.Children.Add(DefenderSDC);
@@ -362,7 +354,7 @@ namespace CedenoB_ZombieGame
             if (s.Token != null)
             {
                 s.Token.HP -= 4;
-                s.Token.SDC -= 2;
+                s.Token.SCD -= 2;
             }
             if (GameBoard[s.X - 1, s.Y].Token != null)
             {
@@ -494,9 +486,6 @@ namespace CedenoB_ZombieGame
             }
         }
         //END TESTING
-        
-
-
     }
 }
 
